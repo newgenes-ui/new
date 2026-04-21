@@ -16,7 +16,7 @@ export default function Footer() {
                 e.currentTarget.style.display = 'none';
               }}
             />
-            <div className="text-on-surface-variant text-[13px] md:text-sm font-sans px-2 font-semibold">
+            <div className="text-on-surface-variant text-[15px] md:text-base font-sans px-2 font-semibold">
               (주) 뉴진사이언스
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-surface-container-highest/50">
-          <p className="text-on-surface-variant/50 text-xs font-label tracking-wide text-center md:text-left">
+          <p className="text-on-surface-variant/50 text-sm font-label tracking-wide text-center md:text-left">
             © {new Date().getFullYear()} (주)뉴진사이언스 All Rights Reserved.
           </p>
         </div>
