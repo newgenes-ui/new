@@ -55,7 +55,7 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 h-full flex items-center">
         <motion.div
           key={current}
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function Hero() {
               {slides[current].tag}
             </span>
           </div>
-          <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-8 text-white whitespace-pre-line">
+          <h1 className="font-headline text-3xl sm:text-4xl md:text-7xl font-bold tracking-tighter leading-tight mb-6 md:mb-8 text-white whitespace-pre-line">
             {slides[current].title.split('\n').map((line, i) => (
               <span key={i}>
                 {line.includes('뉴진사이언스') || line.includes('혁신적인 솔루션') || line.includes('전문 분석 파트너') || line === 'ExTransfection' || line.includes('TWIST BIO') || line.includes('New Genes 라인업') || line.includes('뉴진스 라인업') || line.includes('기초장비 시스템') ? (
@@ -83,7 +83,7 @@ export default function Hero() {
               </div>
             )}
           </h1>
-          <p className="font-sans text-xl text-white/80 leading-relaxed mb-10 max-w-2xl whitespace-pre-line">
+          <p className="font-sans text-sm sm:text-base md:text-xl text-white/80 leading-relaxed mb-8 md:mb-10 max-w-2xl whitespace-pre-line">
             {slides[current].description}
           </p>
         </motion.div>
