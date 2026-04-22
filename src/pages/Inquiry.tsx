@@ -10,36 +10,43 @@ export default function Inquiry() {
     message: ""
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/newgenes@newgenesci.com", {
+      const response = await fetch("/api/inquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json"
         },
         body: JSON.stringify({
-          "이름_업체명": formData.name,
-          "연락처": formData.phone,
-          "답신_이메일": formData.email,
-          "문의내용": formData.message,
-          "_subject": `[웹사이트 견적문의] ${formData.name} 님의 문의가 도착했습니다.`,
-          "_captcha": "false",
-          "_template": "table"
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
         }),
       });
 
-      if (response.ok) {
-        alert("문의가 성공적으로 전송되었습니다!\n\n(※ 관리자 안내: 현재 입력하신 내용이 대표 메일로 전송되었습니다. 최초 1회에 한해 대표 이메일 수신함에서 [FormSubmit]에서 온 활성화 메일을 클릭해 주셔야 정상적으로 메일을 받아보실 수 있습니다.)");
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        if (data.message.includes("SMTP 설정")) {
+          alert("테스트 완료! (현재 SMTP 이메일 설정이 안 되어 있어 실제 메일 전송은 생략되고 서버 로그에만 기록되었습니다. 관리자에게 문의하세요.)");
+        } else {
+          alert("문의가 성공적으로 전송되었습니다! 담당자가 확인 후 연락드리겠습니다.");
+        }
         setFormData({ name: "", phone: "", email: "", message: "" });
       } else {
-        alert("전송에 실패했습니다. 다시 시도해주세요.");
+        alert(data.message || "네이버 메일 로그인에 실패했습니다. 환경설정(IMAP/SMTP)을 확인하거나 앱 비밀번호가 정확한지 다시 한 번 확인해 주세요.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+      alert("서버 연결에 실패했습니다. 잠시 후 다시 시도해주세요.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -130,10 +137,11 @@ export default function Inquiry() {
             </div>
             <button 
               type="submit"
-              className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
+              disabled={isLoading}
+              className={`w-full py-4 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2 ${isLoading ? "bg-primary/50 cursor-not-allowed" : "bg-primary hover:bg-primary/90"}`}
             >
-              문의하기
-              <Send className="w-4 h-4" />
+              {isLoading ? "메일 전송 중..." : "문의하기"}
+              {!isLoading && <Send className="w-4 h-4" />}
             </button>
           </form>
         </motion.div>

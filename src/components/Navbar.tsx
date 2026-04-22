@@ -56,6 +56,7 @@ export default function Navbar() {
         { name: "기업부설 연구소 설립\n컨설팅", path: "/partners/consulting" }
       ]
     },
+    { name: "자료실", path: "/archive" },
     { name: "견적문의", path: "/inquiry" }
   ];
 

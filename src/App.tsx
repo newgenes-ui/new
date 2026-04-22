@@ -13,6 +13,7 @@ import EstekBio from "./pages/EstekBio";
 import GenicsBio from "./pages/GenicsBio";
 import TwistBio from "./pages/TwistBio";
 import ResearchConsulting from "./pages/ResearchConsulting";
+import Archive from "./pages/Archive";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/partners" element={<Partners />} />
             <Route path="/partners/twist" element={<TwistBio />} />
             <Route path="/partners/consulting" element={<ResearchConsulting />} />
+            <Route path="/archive" element={<Archive />} />
             <Route path="/inquiry" element={<Inquiry />} />
           </Routes>
         </main>
