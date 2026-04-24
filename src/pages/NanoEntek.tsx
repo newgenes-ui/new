@@ -17,31 +17,76 @@ export default function NanoEntek() {
         </p>
       </motion.div>
 
-      <div className="bg-surface-container-low border border-surface-container-highest rounded-3xl p-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5">
-            <h3 className="text-2xl font-bold mb-6 text-primary">제품 특징</h3>
-            <ul className="space-y-4">
-              {[
-                "독자적인 마이크로포레이션 기술 적용",
-                "세포 스트레스 최소화",
-                "높은 형질 감염 효율 보장",
-                "탁월한 세포 생존율",
-                "컴팩트한 탁상형 디자인"
-              ].map(item => (
-                <li key={item} className="flex items-center gap-3 text-on-surface-variant">
-                  <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+      {/* 1. 상단 섹션: 왼쪽 A.png, 오른쪽 제품 내용 */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="flex items-center justify-center p-4 bg-surface-container-highest rounded-3xl border border-surface-container-highest shadow-inner">
+          <img 
+            src="/A.png" 
+            alt="ExTransfection System" 
+            className="w-full max-w-xl h-auto object-contain transform scale-110 hover:scale-125 transition-transform duration-500"
+          />
+        </div>
+        <div className="flex flex-col justify-center">
+          <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-[11px] font-bold rounded-full mb-4 uppercase tracking-widest w-max">
+            Next-Gen Transfection
           </div>
-          <div className="lg:col-span-7 flex items-center justify-center p-4 bg-surface-container-highest rounded-2xl border border-surface-container-highest">
-            <img 
-              src="/20260315_185921.png" 
-              alt="나노엔텍 ExT" 
-              className="w-full h-auto object-contain transform scale-105"
-            />
+          <img 
+            src="/aa.png" 
+            alt="ExTransfection" 
+            className="w-auto h-10 md:h-12 mb-6 object-contain object-left" 
+          />
+          <p className="text-on-surface-variant text-lg leading-relaxed mb-8 break-keep">
+            ExTransfection™ Electroporation System은 단일 챔버 팁을 사용하여 정밀한 전기 펄스를 전달함으로써 높은 세포 생존율과 효율적인 형질감염을 가능하게 하는 전기 천공 장비입니다.
+          </p>
+          
+          <div className="flex gap-8">
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-2">
+                <span className="text-secondary text-xl">⚡</span>
+              </div>
+              <span className="text-xs font-semibold text-on-surface-variant">Efficiency</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-2">
+                <span className="text-secondary text-xl">🛡️</span>
+              </div>
+              <span className="text-xs font-semibold text-on-surface-variant">Viability</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-2">
+                <span className="text-secondary text-xl">🔄</span>
+              </div>
+              <span className="text-xs font-semibold text-on-surface-variant">Reproducibility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 하단 섹션: 왼쪽 B.png 카드, 오른쪽 C.png 카드 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+        {/* 2. 하단 왼쪽 B.png */}
+        <div className="bg-surface-container-low border border-surface-container-highest rounded-2xl flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group overflow-hidden">
+          <div className="w-full h-80 bg-white flex items-center justify-center overflow-hidden">
+            <img src="/B.png" alt="10 μL Kit" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div className="p-6 w-full bg-surface-container-low">
+            <h4 className="text-xl font-bold text-primary mb-2">ExTransfection™ 10 μL Kit</h4>
+            <p className="text-sm text-on-surface-variant">
+              Disposables for ExTransfection™
+            </p>
+          </div>
+        </div>
+
+        {/* 3. 하단 오른쪽 C.png */}
+        <div className="bg-surface-container-low border border-surface-container-highest rounded-2xl flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 group overflow-hidden">
+          <div className="w-full h-80 bg-white flex items-center justify-center overflow-hidden">
+            <img src="/C.png" alt="100 μL Kit" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div className="p-6 w-full bg-surface-container-low">
+            <h4 className="text-xl font-bold text-primary mb-2">ExTransfection™ 100 μL Kit</h4>
+            <p className="text-sm text-on-surface-variant">
+              Disposables for ExTransfection™
+            </p>
           </div>
         </div>
       </div>
