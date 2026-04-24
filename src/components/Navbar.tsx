@@ -46,6 +46,14 @@ export default function Navbar() {
       ]
     },
     { 
+      name: "R&D", 
+      path: "#",
+      dropdown: [
+        { name: "이스텍바이오 제품", path: "/products/estek" },
+        { name: "제닉스바이오 제품", path: "/products/genics" }
+      ]
+    },
+    { 
       name: "장비소개", 
       path: "#",
       dropdown: [
@@ -57,9 +65,7 @@ export default function Navbar() {
       name: "제품소개", 
       path: "#",
       dropdown: [
-        { name: "뉴진스 제품", path: "/products" },
-        { name: "이스텍바이오 제품", path: "/products/estek" },
-        { name: "제닉스바이오 제품", path: "/products/genics" }
+        { name: "뉴진스 제품", path: "/products" }
       ]
     },
     { 

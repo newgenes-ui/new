@@ -90,6 +90,18 @@ export default function NanoEntek() {
           </div>
         </div>
       </div>
+
+      {/* 4. 홈페이지 링크 버튼 */}
+      <div className="flex justify-center mt-16 mb-8">
+        <a 
+          href="https://www.nanoentek.com/theme/nanont2_en/shop/02/product01.php?stx=ExTransfection&x=12&y=27" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-lg font-bold rounded-xl hover:bg-secondary transition-colors shadow-lg hover:shadow-xl"
+        >
+          나노엔텍 ExT 홈페이지 가기
+        </a>
+      </div>
     </div>
   );
 }
