@@ -8,44 +8,92 @@ export default function Archive() {
 
   const catalogs = [
     {
-      id: 1,
-      title: "뉴진사이언스 종합 카탈로그",
+      id: 11,
+      title: "뉴진사이언스 기초장비 카다로그",
       author: "관리자",
       date: "2024-05-01",
       views: "1,245",
-      fileUrl: "#" // 추후 실제 파일 경로로 업데이트 하세요
+      fileUrl: "/catalogs/기초장비 카다로그.pdf"
     },
     {
-      id: 2,
-      title: "나노엔텍(NanoEntek) ExTransfection 브로슈어",
+      id: 10,
+      title: "나노엔텍 ExTransfection User Manual",
       author: "관리자",
       date: "2024-04-15",
       views: "852",
-      fileUrl: "#"
+      fileUrl: "/catalogs/[ExTransfection] User Manual (V.0.0) (3).pdf"
     },
     {
-      id: 3,
-      title: "이스텍바이오(ESTEK Bio) 제품 안내서",
+      id: 9,
+      title: "나노엔텍 ExTransfection 브로슈어",
       author: "관리자",
-      date: "2024-03-20",
-      views: "623",
-      fileUrl: "#"
+      date: "2024-04-15",
+      views: "721",
+      fileUrl: "/catalogs/[ExTransfection] Brochure_(V.0.0).pdf"
     },
     {
-      id: 4,
-      title: "제닉스바이오(GenicsBio) 시약 카탈로그",
+      id: 8,
+      title: "나노엔텍 ExTransfection 국문 리플렛",
       author: "관리자",
-      date: "2024-03-10",
-      views: "431",
-      fileUrl: "#"
+      date: "2024-04-14",
+      views: "640",
+      fileUrl: "/catalogs/[ExTransfection] Leaflet_KR(V.0.0)_ExT 국문 리플렛.pdf"
+    },
+    {
+      id: 7,
+      title: "나노엔텍 ExTransfection Quick Guide",
+      author: "관리자",
+      date: "2024-04-14",
+      views: "520",
+      fileUrl: "/catalogs/[ExTransfection] Quick guide_(V.0.0)_outlined.pdf"
+    },
+    {
+      id: 6,
+      title: "나노엔텍 ExTransfection Cell protocols",
+      author: "관리자",
+      date: "2024-04-12",
+      views: "432",
+      fileUrl: "/catalogs/ExTransfection_Cell protocols_NanoEntek.pdf"
     },
     {
       id: 5,
-      title: "트위스트바이오(TWIST BIO) 서비스 소개서",
+      title: "나노엔텍 3단 리플릿",
       author: "관리자",
-      date: "2024-02-28",
-      views: "980",
-      fileUrl: "#"
+      date: "2024-04-10",
+      views: "320",
+      fileUrl: "/catalogs/나노엔텍 3단 리플릿 2.pdf"
+    },
+    {
+      id: 4,
+      title: "트위스트바이오(TWIST BIO) 유전자합성",
+      author: "관리자",
+      date: "2024-03-25",
+      views: "480",
+      fileUrl: "/catalogs/TWIST Bioscience_유전자합성 (2).pdf"
+    },
+    {
+      id: 3,
+      title: "뉴진사이언스 Conical Tubes 브로셔",
+      author: "관리자",
+      date: "2024-03-20",
+      views: "623",
+      fileUrl: "/catalogs/Conical Tubes 브로셔.pdf"
+    },
+    {
+      id: 2,
+      title: "뉴진사이언스 Serological Pipette 브로셔",
+      author: "관리자",
+      date: "2024-03-15",
+      views: "512",
+      fileUrl: "/catalogs/Serological Pipette 브로셔.pdf"
+    },
+    {
+      id: 1,
+      title: "뉴진사이언스 Micro Tip 전단지",
+      author: "관리자",
+      date: "2024-03-10",
+      views: "431",
+      fileUrl: "/catalogs/Micro Tip_상시전단지_NGS_2.pdf"
     }
   ];
 
