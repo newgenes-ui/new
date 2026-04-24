@@ -147,10 +147,8 @@ export default function Archive() {
           {/* 테이블 헤더 */}
           <div className="hidden md:grid grid-cols-12 gap-4 py-4 border-b border-surface-container-highest bg-surface-container-lowest text-center text-sm font-bold text-primary">
             <div className="col-span-1">번호</div>
-            <div className="col-span-6">제목</div>
+            <div className="col-span-9">제목</div>
             <div className="col-span-2">작성자</div>
-            <div className="col-span-2">등록일</div>
-            <div className="col-span-1">조회</div>
           </div>
 
           {/* 테이블 바디 */}
@@ -163,7 +161,7 @@ export default function Archive() {
                 <div className="hidden md:block col-span-1 text-sm text-on-surface-variant font-medium">
                   {catalogs.length - index}
                 </div>
-                <div className="col-span-1 md:col-span-6 text-left md:text-center text-primary font-medium flex items-center justify-between md:justify-center group cursor-pointer">
+                <div className="col-span-1 md:col-span-9 text-left md:text-center text-primary font-medium flex items-center justify-between md:justify-center group cursor-pointer">
                   <a href={item.fileUrl} download className="hover:text-secondary transition-colors group flex items-center gap-2">
                     <span className="truncate max-w-[280px] sm:max-w-[400px] text-left">{item.title}</span>
                     <Download className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-secondary transition-opacity" />
@@ -172,21 +170,11 @@ export default function Archive() {
                 <div className="hidden md:block col-span-2 text-sm text-on-surface-variant">
                   {item.author}
                 </div>
-                <div className="hidden md:block col-span-2 text-sm text-on-surface-variant">
-                  {item.date}
-                </div>
-                <div className="hidden md:block col-span-1 text-sm text-on-surface-variant">
-                  {item.views}
-                </div>
                 
                 {/* 모바일 뷰 용 데이터 정보 */}
                 <div className="flex md:hidden justify-between items-center mt-2 text-xs text-on-surface-variant">
                   <div className="flex gap-3">
                     <span>{item.author}</span>
-                    <span>{item.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span>조회 {item.views}</span>
                   </div>
                 </div>
               </div>
