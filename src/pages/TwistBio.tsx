@@ -27,7 +27,7 @@ export default function TwistBio() {
       details: [
         { label: "형태", value: "Plasmid DNA" },
         { label: "길이", value: "0.3 - 5.0 kb" },
-        { label: "납기", value: "10~15일", valueColor: "text-emerald-600 font-bold" },
+        { label: "납기", value: "10~15 영업일", valueColor: "text-emerald-600 font-bold" },
         { label: "수율", value: "50ng - 2ug" },
         { label: "검증", value: "NGS 100%" },
       ]
