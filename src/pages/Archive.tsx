@@ -173,7 +173,7 @@ export default function Archive() {
                   {catalogs.length - index}
                 </div>
                 <div className="col-span-1 md:col-span-9 text-left md:text-center text-primary font-medium flex items-center justify-between md:justify-center group cursor-pointer">
-                  <a href={item.fileUrl} download={item.downloadName} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors group flex items-center gap-2 w-full justify-start md:justify-center">
+                  <a href={item.fileUrl} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors group flex items-center gap-2 w-full justify-start md:justify-center">
                     <span className="truncate max-w-[280px] sm:max-w-[400px] text-left">{item.title}</span>
                     <Download className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-secondary transition-opacity shrink-0" />
                   </a>
