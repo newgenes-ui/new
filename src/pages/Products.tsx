@@ -29,7 +29,7 @@ export default function Products() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-16"
       >
-        <h2 className="text-4xl font-bold font-headline mb-4">제품소개</h2>
+        <h2 className="text-4xl font-bold font-headline mb-4">New Genes 제품 소개</h2>
         <p className="text-on-surface-variant max-w-2xl">
           실험의 가치를 높이는 뉴진스만의 고품질 소모품 라인업입니다. 
           엄격한 품질 관리를 통해 신뢰할 수 있는 실험 결과를 보장합니다.
