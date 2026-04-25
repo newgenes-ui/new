@@ -43,32 +43,44 @@ export default function Equipment() {
           {
             title: "순환수조",
             image: "/equipment/circulator.png",
-            descImage: "/equipment/circulator_desc.png"
+            model: "NGS-IB430, NGS-MB/B/CT 시리즈",
+            productName: "순환 수조 / 고온 순환 바스 / 콜드 트랩 바스",
+            specs: "용량 8L~30L, 온도 범위 -70°C ~ 최대 250°C"
           },
           {
             title: "건조기",
             image: "/equipment/oven.png",
-            descImage: "/equipment/oven_desc.png"
+            model: "NGS-OV 시리즈, NGS-VOV 시리즈",
+            productName: "오븐 / 진공오븐",
+            specs: "용량 8L~250L, 온도 범위 주위온도 +10°C~250°C"
           },
           {
             title: "항온항습기",
             image: "/equipment/chamber.png",
-            descImage: "/equipment/chamber_desc.png"
+            model: "NGS-STH 시리즈, NGS-TH 시리즈",
+            productName: "슬림형 항온항습기 / 일반 항온항습기",
+            specs: "용량 150L~1000L, 온도 -40°C~150°C, 습도 30~98%RH"
           },
           {
             title: "배양기",
             image: "/equipment/incubator.png",
-            descImage: "/equipment/incubator_desc.png"
+            model: "NGS-IN 시리즈",
+            productName: "배양기",
+            specs: "용량 50L~250L, 온도 범위 주위온도 +5°C~70°C"
           },
           {
             title: "가열자력교반기",
             image: "/equipment/hotplate_stirrer.png",
-            descImage: "/equipment/hotplate_stirrer_desc.png"
+            model: "NH1-A3, NH1-D3, NH2-A3, NH2-D3",
+            productName: "가열 자력 교반기",
+            specs: "용량 5L~25L, 회전수 50~2000rpm, 가열 온도 최대 350°C"
           },
           {
             title: "자력교반기",
             image: "/equipment/magnetic_stirrer.png",
-            descImage: "/equipment/magnetic_stirrer_desc.png"
+            model: "NH1-A1, NH1-D1, NH2-D1",
+            productName: "자력 교반기",
+            specs: "용량 5L~25L, 플레이트 150x150~170x170mm, 50~2000rpm"
           }
         ].map((cat, idx) => (
           <motion.div
@@ -90,12 +102,21 @@ export default function Equipment() {
               />
             </div>
             
-            <div className="w-full p-4 flex items-center justify-center bg-surface-container-low/30 border-t border-surface-container-highest">
-              <img 
-                src={cat.descImage} 
-                alt={`${cat.title} 상세 내용`} 
-                className="w-full object-contain rounded-xl" 
-              />
+            <div className="w-full p-6 flex flex-col flex-grow bg-surface-container-low/30 border-t border-surface-container-highest">
+              <div className="space-y-4 text-sm">
+                <div>
+                  <span className="block text-xs font-bold text-secondary mb-1">모델명</span>
+                  <span className="block text-on-surface font-medium">{cat.model}</span>
+                </div>
+                <div>
+                  <span className="block text-xs font-bold text-secondary mb-1">품명</span>
+                  <span className="block text-on-surface font-medium">{cat.productName}</span>
+                </div>
+                <div>
+                  <span className="block text-xs font-bold text-secondary mb-1">주요 사양</span>
+                  <span className="block text-on-surface-variant leading-relaxed break-keep">{cat.specs}</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         ))}
