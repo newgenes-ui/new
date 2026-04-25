@@ -25,38 +25,78 @@ export default function Equipment() {
   ];
 
   return (
-    <div className="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+    <div className="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-16"
+        className="mb-16 text-center"
       >
-        <h2 className="text-4xl font-bold font-headline mb-4">장비소개</h2>
-        <p className="text-on-surface-variant max-w-2xl">
+        <h2 className="text-4xl font-bold font-headline mb-4">기초 장비</h2>
+        <p className="text-on-surface-variant max-w-2xl mx-auto text-lg">
           실험실의 기초가 되는 고성능 장비 시스템을 제공합니다. 
           정밀한 온도 제어와 안정적인 성능으로 연구의 효율을 높여드립니다.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {categories.map((cat, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            title: "순환수조",
+            image: "/equipment/circulator.png",
+            descImage: "/equipment/circulator_desc.png"
+          },
+          {
+            title: "건조기",
+            image: "/equipment/oven.png",
+            descImage: "/equipment/oven_desc.png"
+          },
+          {
+            title: "항온항습기",
+            image: "/equipment/chamber.png",
+            descImage: "/equipment/chamber_desc.png"
+          },
+          {
+            title: "배양기",
+            image: "/equipment/incubator.png",
+            descImage: "/equipment/incubator_desc.png"
+          },
+          {
+            title: "가열자력교반기",
+            image: "/equipment/hotplate_stirrer.png",
+            descImage: "/equipment/hotplate_stirrer_desc.png"
+          },
+          {
+            title: "자력교반기",
+            image: "/equipment/magnetic_stirrer.png",
+            descImage: "/equipment/magnetic_stirrer_desc.png"
+          }
+        ].map((cat, idx) => (
           <motion.div
             key={cat.title}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="p-8 rounded-2xl bg-surface-container-low border border-surface-container-highest hover:border-secondary transition-colors group"
+            className="flex flex-col bg-white rounded-3xl overflow-hidden border border-surface-container-highest shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
           >
-            <h3 className="text-xl font-bold mb-1 text-primary">{cat.title}</h3>
-            <p className="text-secondary font-medium text-sm mb-6">{cat.subtitle}</p>
-            <ul className="space-y-3">
-              {cat.items.map(item => (
-                <li key={item} className="flex items-center gap-2 text-on-surface-variant text-sm">
-                  <div className="w-1.5 h-1.5 rounded-full bg-secondary/40" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="p-6 pb-2">
+              <h3 className="text-2xl font-bold text-primary mb-4 text-center">{cat.title}</h3>
+            </div>
+            
+            <div className="w-full h-56 flex items-center justify-center p-4 relative overflow-hidden bg-white">
+              <img 
+                src={cat.image} 
+                alt={cat.title} 
+                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 relative z-10" 
+              />
+            </div>
+            
+            <div className="w-full p-4 flex items-center justify-center bg-surface-container-low/30 border-t border-surface-container-highest">
+              <img 
+                src={cat.descImage} 
+                alt={`${cat.title} 상세 내용`} 
+                className="w-full object-contain rounded-xl" 
+              />
+            </div>
           </motion.div>
         ))}
       </div>
