@@ -5,17 +5,20 @@ export default function Products() {
     {
       name: "Serological Pipettes",
       description: "정밀한 분주를 위한 선택, NewGenes만의 고품질 스트레칭 및 웰딩 공법.",
-      features: ["1ml, 2ml, 5ml, 10ml, 25ml, 50ml", "DNase/RNase Free", "Non-pyrogenic"]
+      features: ["1ml, 2ml, 5ml, 10ml, 25ml, 50ml", "DNase/RNase Free", "Non-pyrogenic"],
+      image: "/pipettes.png"
     },
     {
       name: "Centrifuge Tubes",
       description: "안정적인 시료 보관과 원심분리를 보장하는 실험실의 필수 파트너.",
-      features: ["15ml, 50ml Conical Tubes", "High RCF rating", "Leak-proof cap design"]
+      features: ["15ml, 50ml Conical Tubes", "High RCF rating", "Leak-proof cap design"],
+      image: "/tubes.png"
     },
     {
       name: "Pipette Tips",
       description: "다양한 규격과 철저한 멸균 처리, 실험의 정확도를 높이는 최적의 팁 라인업.",
-      features: ["Filter Tips", "Low Retention Tips", "Universal Fit"]
+      features: ["Filter Tips", "Low Retention Tips", "Universal Fit"],
+      image: "/tips.png"
     }
   ];
 
@@ -40,10 +43,14 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="flex flex-col p-8 rounded-2xl bg-surface-container-low border border-surface-container-highest"
+            className="flex flex-col p-6 rounded-3xl bg-surface-container-low border border-surface-container-highest transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group"
           >
-            <div className="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center mb-6">
-              <div className="w-6 h-6 rounded-full border-2 border-secondary" />
+            <div className="w-full h-56 mb-6 rounded-2xl overflow-hidden bg-white flex items-center justify-center p-4">
+              <img 
+                src={product.image} 
+                alt={product.name} 
+                className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110" 
+              />
             </div>
             <h3 className="text-xl font-bold mb-4 text-primary">{product.name}</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
