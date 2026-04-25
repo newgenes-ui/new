@@ -13,7 +13,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-05-01",
       views: "1,245",
-      fileUrl: "/catalogs/기초장비 카다로그.pdf"
+      fileUrl: "/catalogs/basic_equipment_catalog.pdf",
+      downloadName: "기초장비 카다로그.pdf"
     },
     {
       id: 10,
@@ -21,7 +22,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-04-15",
       views: "852",
-      fileUrl: "/catalogs/[ExTransfection] User Manual (V.0.0) (3).pdf"
+      fileUrl: "/catalogs/extransfection_user_manual.pdf",
+      downloadName: "나노엔텍 ExTransfection User Manual.pdf"
     },
     {
       id: 9,
@@ -29,7 +31,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-04-15",
       views: "721",
-      fileUrl: "/catalogs/[ExTransfection] Brochure_(V.0.0).pdf"
+      fileUrl: "/catalogs/extransfection_brochure.pdf",
+      downloadName: "나노엔텍 ExTransfection 브로슈어.pdf"
     },
     {
       id: 8,
@@ -37,7 +40,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-04-14",
       views: "640",
-      fileUrl: "/catalogs/[ExTransfection] Leaflet_KR(V.0.0)_ExT 국문 리플렛.pdf"
+      fileUrl: "/catalogs/extransfection_leaflet_kr.pdf",
+      downloadName: "나노엔텍 ExTransfection 국문 리플렛.pdf"
     },
     {
       id: 7,
@@ -45,7 +49,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-04-14",
       views: "520",
-      fileUrl: "/catalogs/[ExTransfection] Quick guide_(V.0.0)_outlined.pdf"
+      fileUrl: "/catalogs/extransfection_quick_guide.pdf",
+      downloadName: "나노엔텍 ExTransfection Quick Guide.pdf"
     },
     {
       id: 6,
@@ -53,7 +58,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-04-12",
       views: "432",
-      fileUrl: "/catalogs/ExTransfection_Cell protocols_NanoEntek.pdf"
+      fileUrl: "/catalogs/extransfection_cell_protocols.pdf",
+      downloadName: "나노엔텍 ExTransfection Cell protocols.pdf"
     },
     {
       id: 5,
@@ -61,7 +67,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-04-10",
       views: "320",
-      fileUrl: "/catalogs/나노엔텍 3단 리플릿 2.pdf"
+      fileUrl: "/catalogs/nanoentek_leaflet.pdf",
+      downloadName: "나노엔텍 3단 리플릿.pdf"
     },
     {
       id: 4,
@@ -69,7 +76,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-03-25",
       views: "480",
-      fileUrl: "/catalogs/TWIST Bioscience_유전자합성 (2).pdf"
+      fileUrl: "/catalogs/twist_bioscience_synthesis.pdf",
+      downloadName: "트위스트바이오 유전자합성.pdf"
     },
     {
       id: 3,
@@ -77,7 +85,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-03-20",
       views: "623",
-      fileUrl: "/catalogs/Conical Tubes 브로셔.pdf"
+      fileUrl: "/catalogs/conical_tubes_brochure.pdf",
+      downloadName: "뉴진사이언스 Conical Tubes 브로셔.pdf"
     },
     {
       id: 2,
@@ -85,7 +94,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-03-15",
       views: "512",
-      fileUrl: "/catalogs/Serological Pipette 브로셔.pdf"
+      fileUrl: "/catalogs/serological_pipette_brochure.pdf",
+      downloadName: "뉴진사이언스 Serological Pipette 브로셔.pdf"
     },
     {
       id: 1,
@@ -93,7 +103,8 @@ export default function Archive() {
       author: "관리자",
       date: "2024-03-10",
       views: "431",
-      fileUrl: "/catalogs/Micro Tip_상시전단지_NGS_2.pdf"
+      fileUrl: "/catalogs/micro_tip_leaflet.pdf",
+      downloadName: "뉴진사이언스 Micro Tip 전단지.pdf"
     }
   ];
 
@@ -162,7 +173,7 @@ export default function Archive() {
                   {catalogs.length - index}
                 </div>
                 <div className="col-span-1 md:col-span-9 text-left md:text-center text-primary font-medium flex items-center justify-between md:justify-center group cursor-pointer">
-                  <a href={encodeURI(item.fileUrl)} download={item.fileUrl.split('/').pop()} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors group flex items-center gap-2 w-full justify-start md:justify-center">
+                  <a href={item.fileUrl} download={item.downloadName} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors group flex items-center gap-2 w-full justify-start md:justify-center">
                     <span className="truncate max-w-[280px] sm:max-w-[400px] text-left">{item.title}</span>
                     <Download className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-secondary transition-opacity shrink-0" />
                   </a>
