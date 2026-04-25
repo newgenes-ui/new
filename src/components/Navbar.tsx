@@ -82,8 +82,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-surface-container-highest h-20">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-full flex justify-between items-center">
+      <nav 
+        className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-surface-container-highest h-20"
+        onMouseLeave={() => setOpenMenu(null)}
+      >
+        <div className="max-w-7xl mx-auto px-4 md:px-8 h-full flex justify-between items-center bg-white relative z-50">
           <Link to="/" onClick={() => { setOpenMenu(null); setMobileOpen(false); }}>
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -95,50 +98,36 @@ export default function Navbar() {
           </Link>
 
           {/* 데스크탑 메뉴 */}
-          <div className="hidden md:flex items-center gap-12 h-full" ref={navRef}>
+          <div className="hidden md:flex items-center gap-10 h-full">
             {menuItems.map((item) => (
               <div 
                 key={item.name}
                 className="relative h-full flex items-center"
+                onMouseEnter={() => setOpenMenu(item.dropdown ? item.name : null)}
               >
                 <Link
                   to={item.path}
                   onClick={(e) => {
-                    if (item.dropdown) {
-                      e.preventDefault();
-                      setOpenMenu(openMenu === item.name ? null : item.name);
-                    } else {
-                      setOpenMenu(null);
-                    }
+                    if (item.dropdown) e.preventDefault();
+                    else setOpenMenu(null);
                   }}
-                  className={`flex items-center gap-1 text-sm font-medium tracking-tight font-sans transition-colors h-full ${
-                    location.pathname === item.path || (item.dropdown?.some(d => location.pathname === d.path)) ? "text-secondary border-b-2 border-secondary" : "text-primary hover:text-secondary"
+                  className={`flex items-center gap-1 text-[15px] font-bold tracking-tight font-sans transition-colors h-full px-2 ${
+                    location.pathname === item.path || (item.dropdown?.some(d => location.pathname === d.path)) ? "text-[#143B71]" : "text-primary hover:text-[#143B71]"
                   }`}
                 >
                   {item.name}
-                  {item.dropdown && <ChevronDown className={`w-3 h-3 transition-transform ${openMenu === item.name ? "rotate-180" : ""}`} />}
                 </Link>
 
+                {/* Triangle Indicator (Desktop) */}
                 <AnimatePresence>
                   {item.dropdown && openMenu === item.name && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
+                      exit={{ opacity: 0, y: 5 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-20 left-1/2 -translate-x-1/2 w-48 bg-secondary rounded-xl shadow-xl py-2 overflow-hidden"
-                    >
-                      {item.dropdown.map((sub) => (
-                        <Link
-                          key={sub.name}
-                          to={sub.path}
-                          onClick={() => setOpenMenu(null)}
-                          className="block px-6 py-3 text-xs font-medium text-white hover:bg-white/20 transition-colors"
-                        >
-                          {sub.name}
-                        </Link>
-                      ))}
-                    </motion.div>
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[12px] border-r-[12px] border-b-[14px] border-l-transparent border-r-transparent border-b-[#143B71]"
+                    />
                   )}
                 </AnimatePresence>
               </div>
@@ -154,6 +143,36 @@ export default function Navbar() {
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
+        {/* Full Width Dropdown Bar (Desktop) */}
+        <AnimatePresence>
+          {openMenu && menuItems.find(m => m.name === openMenu)?.dropdown && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 64 }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-20 left-0 right-0 bg-[#143B71] shadow-lg hidden md:flex items-center overflow-hidden z-40 border-t border-[#143B71]"
+            >
+              <div className="max-w-7xl mx-auto px-8 w-full flex items-center justify-center gap-16">
+                <h3 className="text-white text-lg font-bold tracking-wider shrink-0">{openMenu}</h3>
+                <div className="flex items-center gap-8 flex-wrap">
+                  {menuItems.find(m => m.name === openMenu)?.dropdown?.map(sub => (
+                    <Link 
+                      key={sub.name} 
+                      to={sub.path} 
+                      onClick={() => setOpenMenu(null)}
+                      className={`text-white/80 hover:text-white font-medium text-[15px] transition-colors relative group py-2 ${location.pathname === sub.path ? 'text-white font-bold' : ''}`}
+                    >
+                      {sub.name}
+                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full ${location.pathname === sub.path ? 'w-full' : ''}`}></span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* 모바일 풀스크린 메뉴 */}
