@@ -77,7 +77,7 @@ export default function TwistBio() {
         <h2 className="text-4xl font-bold font-headline mb-4">TWIST BIO</h2>
         <div className="text-on-surface-variant max-w-3xl text-lg leading-relaxed space-y-4">
           <p>
-            Twist Bioscience는 엑소젠의 협력업체로서 유전자 합성 서비스를 제공하고 있습니다. <br className="hidden md:block" />
+            뉴진사이언스는 엑소젠의 협력업체로서 유전자 합성 서비스를 제공하고 있습니다. <br className="hidden md:block" />
             Twist Bioscience의 혁신적인 실리콘 기반 DNA 합성 기술로 연구의 속도를 높이세요.
           </p>
           <div className="flex items-start gap-2 mt-4 text-primary font-medium">
