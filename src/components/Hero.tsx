@@ -17,7 +17,7 @@ const slides = [
     description: "• Serological Pipettes: 정밀한 분주를 위한 선택, NewGenes만의 고품질 스트레칭 및 웰딩 공법.\n• Centrifuge Tubes: 안정적인 시료 보관과 원심분리를 보장하는 실험실의 필수 파트너.\n• Pipette Tips: 다양한 규격과 철저한 멸균 처리, 실험의 정확도를 높이는 최적의 팁 라인업."
   },
   {
-    image: "/slide3.png",
+    image: "/slide3_new.png",
     tag: "뉴진스 제품",
     title: "최적의 연구 환경\n기초장비 시스템",
     description: "• Incubator / Temp. & Humidity Chamber (배양기 및 항온항습기)\n• Circulating Bath & Cold Trap (순환 수조 및 콜드 트랩)\n• Furnace & Oven (전기로 및 오븐)\n• Stirrer (교반기)"
@@ -51,7 +51,8 @@ export default function Hero() {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          {/* 오버레이 밝기를 60%에서 30%로 낮춤 */}
+          <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       </AnimatePresence>
 
