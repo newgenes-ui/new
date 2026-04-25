@@ -12,7 +12,7 @@ export default function TwistBio() {
       details: [
         { label: "형태", value: "dsDNA" },
         { label: "길이", value: "0.3 - 5.0 kb" },
-        { label: "납기", value: "2 - 4 영업일", valueColor: "text-emerald-600 font-bold" },
+        { label: "납기", value: "4~5 영업일", valueColor: "text-emerald-600 font-bold" },
         { label: "수율", value: "100ng - 1ug" },
         { label: "오류율", value: "1:7,500 bp" },
       ]
@@ -27,7 +27,7 @@ export default function TwistBio() {
       details: [
         { label: "형태", value: "Plasmid DNA" },
         { label: "길이", value: "0.3 - 5.0 kb" },
-        { label: "납기", value: "4 - 15 영업일", valueColor: "text-emerald-600 font-bold" },
+        { label: "납기", value: "10~15일", valueColor: "text-emerald-600 font-bold" },
         { label: "수율", value: "50ng - 2ug" },
         { label: "검증", value: "NGS 100%" },
       ]
@@ -41,7 +41,7 @@ export default function TwistBio() {
       recommended: false,
       details: [
         { label: "길이", value: "20 - 300 nt" },
-        { label: "납기", value: "3 - 10 영업일", valueColor: "text-blue-600 font-bold" },
+        { label: "납기", value: "2~3주", valueColor: "text-blue-600 font-bold" },
         { label: "수율", value: ">0.2 fmol/oligo" },
         { label: "오류율", value: "1:3,000 nt" },
         { label: "용도", value: "CRISPR/sgRNA" },
