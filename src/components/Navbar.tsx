@@ -77,6 +77,7 @@ export default function Navbar() {
       ]
     },
     { name: "자료실", path: "/archive" },
+    { name: "ESG", path: "/esg" },
     { name: "견적문의", path: "/inquiry" }
   ];
 
