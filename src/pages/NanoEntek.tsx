@@ -123,7 +123,7 @@ export default function NanoEntek() {
                 구 모델을 가지고 계시나요?
               </h3>
 
-              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6 max-w-lg">
+              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6 max-w-2xl">
                 기존 Invitrogen Neon™ Transfection System을 사용 중이시라면,<br />
                 나노엔텍 ExTransfection™ 소모품이 <strong className="text-white">호환 가능</strong>합니다.
               </p>
