@@ -57,7 +57,7 @@ export default function History() {
               회사 연혁
             </h2>
             <p className="text-white/60 max-w-xl text-base md:text-lg">
-              탄탄한 기반 위에, 미래를 설계합니다.
+              (주)뉴진사이언스는 고객과 함께 성장하겠습니다.
             </p>
           </motion.div>
         </div>
