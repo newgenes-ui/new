@@ -91,6 +91,67 @@ export default function NanoEntek() {
         </div>
       </div>
 
+      {/* 5. 구 모델 호환 안내 배너 */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-16 mb-4"
+      >
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary via-primary-container to-primary border border-primary-container/30 shadow-xl">
+          {/* 배경 장식 */}
+          <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white/[0.04]" />
+          <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-white/[0.04]" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-5 gap-8 items-center p-8 md:p-12">
+            {/* 왼쪽: 구 모델 이미지 */}
+            <div className="lg:col-span-2 flex justify-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 max-w-xs">
+                <img 
+                  src="/neon_old.png" 
+                  alt="Invitrogen Neon Transfection System (구 모델)" 
+                  className="w-full h-auto object-contain drop-shadow-lg"
+                />
+              </div>
+            </div>
+
+            {/* 오른쪽: 텍스트 */}
+            <div className="lg:col-span-3 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-400/20 text-amber-300 text-xs font-bold font-label rounded-full mb-5 tracking-wider uppercase">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                소모품 호환 안내
+              </div>
+
+              <h3 className="text-2xl md:text-3xl font-headline font-bold text-white leading-snug mb-4">
+                구 모델을 가지고 계시나요?
+              </h3>
+
+              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-6 max-w-lg">
+                기존 Invitrogen Neon™ Transfection System을 사용 중이시라면,<br className="hidden md:block" />
+                나노엔텍 ExTransfection™ 소모품이 <strong className="text-white">호환 가능</strong>합니다.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start">
+                <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/10">
+                  <span className="text-2xl">✅</span>
+                  <div>
+                    <p className="text-white font-bold text-sm">소모품 100% 호환</p>
+                    <p className="text-white/50 text-xs">Kit · Tip · Buffer 모두 사용 가능</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/10">
+                  <span className="text-2xl">💰</span>
+                  <div>
+                    <p className="text-white font-bold text-sm">합리적인 가격</p>
+                    <p className="text-white/50 text-xs">경쟁력 있는 소모품 단가</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
       {/* 4. 홈페이지 링크 버튼 */}
       <div className="flex justify-center mt-16 mb-8">
         <a 
