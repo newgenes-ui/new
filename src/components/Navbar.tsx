@@ -42,6 +42,7 @@ export default function Navbar() {
       path: "#",
       dropdown: [
         { name: "회사 소개", path: "/about" },
+        { name: "회사 연혁", path: "/history" },
         { name: "오시는 길", path: "/location" }
       ]
     },

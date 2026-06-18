@@ -8,6 +8,7 @@ import Partners from "./pages/Partners";
 import Inquiry from "./pages/Inquiry";
 import AboutCompany from "./pages/AboutCompany";
 import Location from "./pages/Location";
+import History from "./pages/History";
 import NanoEntek from "./pages/NanoEntek";
 import EstekBio from "./pages/EstekBio";
 import GenicsBio from "./pages/GenicsBio";
@@ -25,6 +26,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="/about" element={<AboutCompany />} />
+            <Route path="/history" element={<History />} />
             <Route path="/location" element={<Location />} />
             <Route path="/equipment" element={<Equipment />} />
             <Route path="/equipment/nanoentek" element={<NanoEntek />} />
