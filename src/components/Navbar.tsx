@@ -43,7 +43,8 @@ export default function Navbar() {
       dropdown: [
         { name: "회사 소개", path: "/about" },
         { name: "회사 연혁", path: "/history" },
-        { name: "오시는 길", path: "/location" }
+        { name: "오시는 길", path: "/location" },
+        { name: "ESG", path: "/esg" }
       ]
     },
     { 
@@ -55,30 +56,17 @@ export default function Navbar() {
       ]
     },
     { 
-      name: "장비소개", 
-      path: "#",
-      dropdown: [
-        { name: "나노엔텍 ExT", path: "/equipment/nanoentek" },
-        { name: "기초장비", path: "/equipment" }
-      ]
-    },
-    { 
       name: "제품소개", 
       path: "#",
       dropdown: [
-        { name: "뉴진스 제품", path: "/products" }
+        { name: "나노엔텍 ExT", path: "/equipment/nanoentek" },
+        { name: "뉴진스 제품", path: "/products" },
+        { name: "기초장비", path: "/equipment" },
+        { name: "TWIST BIO", path: "/partners/twist" }
       ]
     },
-    { 
-      name: "협력사 제품", 
-      path: "#",
-      dropdown: [
-        { name: "TWIST BIO", path: "/partners/twist" },
-        { name: "기업부설 연구소 설립 컨설팅", path: "/partners/consulting" }
-      ]
-    },
+    { name: "뉴진스 랩 컨설팅", path: "/partners/consulting" },
     { name: "자료실", path: "/archive" },
-    { name: "ESG", path: "/esg" },
     { name: "견적문의", path: "/inquiry" }
   ];
 
