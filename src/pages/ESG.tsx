@@ -235,64 +235,89 @@ export default function ESG() {
         </div>
       </section>
 
-      {/* ── ROADMAP ──────────────────────────────────── */}
-      <section className="bg-surface-container-low py-20 px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* ── ROADMAP (회사 연혁 스타일) ──────────────────── */}
+      <section className="relative overflow-hidden bg-primary px-6 py-16 md:py-20">
+        <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/[0.03]" />
+        <div className="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-white/[0.03]" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <p className="text-xs font-bold tracking-[.14em] uppercase text-secondary mb-3">
-              실행 로드맵
+            <p className="text-secondary-container text-sm font-label font-bold tracking-[0.25em] uppercase mb-3">
+              Implementation Roadmap
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-white">
               ESG 단계별 추진 계획
             </h2>
           </motion.div>
+        </div>
 
-          <div className="relative max-w-3xl mx-auto">
-            {/* vertical line */}
-            <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary to-cyan-400 md:-translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary-container via-secondary to-secondary-container" />
+      </section>
 
-            {timeline.map((t, i) => {
-              const isEven = i % 2 === 0;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className={`relative flex flex-col md:flex-row items-start gap-4 md:gap-10 mb-12 pl-14 md:pl-0 ${
-                    isEven ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* dot */}
-                  <div className="absolute left-5 md:left-1/2 top-2 w-3.5 h-3.5 rounded-full bg-secondary border-[3px] border-white shadow-[0_0_0_3px] shadow-secondary/40 -translate-x-1/2 z-10" />
+      <section className="bg-surface-container-low py-16 md:py-20 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative">
+            {/* horizontal line (desktop) */}
+            <div className="hidden md:block absolute top-[90px] left-0 right-0 h-[3px] bg-gradient-to-r from-primary/10 via-primary to-primary/10 z-0" />
 
-                  {/* card */}
-                  <div className="flex-1">
-                    <p className="text-xs font-bold tracking-[.1em] text-secondary mb-1.5">
-                      {t.year}
-                    </p>
-                    <div className="bg-white rounded-xl p-5 shadow-md shadow-black/[.05]">
-                      <h4 className="text-base font-bold text-primary mb-1.5">
+            {/* cards */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+              {timeline.map((t, i) => {
+                const accents = ["#00658d", "#d97706", "#0284c7", "#059669"];
+                const accent = accents[i % accents.length];
+                const icons = ["🌱", "📢", "📊", "🏆"];
+                return (
+                  <motion.div
+                    key={t.year}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, type: "spring", stiffness: 80 }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* circle node */}
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-6 shrink-0 ring-4 ring-surface-container-low text-lg"
+                      style={{ background: accent }}
+                    >
+                      <span>{icons[i]}</span>
+                    </div>
+
+                    {/* connector (mobile) */}
+                    <div className="md:hidden w-px h-6 bg-surface-container-highest -mt-2 mb-2" />
+
+                    {/* card */}
+                    <div
+                      className="w-full rounded-2xl bg-white border-2 p-6 md:p-7 shadow-sm hover:shadow-xl transition-shadow duration-300 relative"
+                      style={{ borderColor: accent + "55" }}
+                    >
+                      {/* top accent stripe */}
+                      <div className="absolute top-0 left-4 right-4 h-[3px] rounded-b-full" style={{ background: accent }} />
+
+                      <span
+                        className="inline-block text-xs font-bold font-label tracking-widest uppercase mb-2 px-3 py-1 rounded-full"
+                        style={{ color: accent, background: accent + "14" }}
+                      >
+                        {t.year}
+                      </span>
+
+                      <h3 className="text-primary text-lg md:text-xl font-bold font-headline leading-snug mb-2">
                         {t.title}
-                      </h4>
-                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                      </h3>
+
+                      <p className="text-on-surface-variant text-sm leading-relaxed">
                         {t.desc}
                       </p>
                     </div>
-                  </div>
-
-                  {/* spacer for opposite side */}
-                  <div className="hidden md:block flex-1" />
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
