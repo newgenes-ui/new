@@ -117,10 +117,7 @@ export default function NanoEntek() {
 
             {/* 오른쪽: 텍스트 */}
             <div className="lg:col-span-3 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-400/20 text-amber-300 text-xs font-bold font-label rounded-full mb-5 tracking-wider uppercase">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                소모품 호환 안내
-              </div>
+
 
               <h3 className="text-2xl md:text-3xl font-headline font-bold text-white leading-snug mb-4">
                 구 모델을 가지고 계시나요?
@@ -139,13 +136,7 @@ export default function NanoEntek() {
                     <p className="text-white/50 text-xs">Kit · Tip · Buffer 모두 사용 가능</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/10">
-                  <span className="text-2xl">💰</span>
-                  <div>
-                    <p className="text-white font-bold text-sm">합리적인 가격</p>
-                    <p className="text-white/50 text-xs">경쟁력 있는 소모품 단가</p>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
