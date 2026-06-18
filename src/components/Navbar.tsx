@@ -48,14 +48,6 @@ export default function Navbar() {
       ]
     },
     { 
-      name: "R&D", 
-      path: "#",
-      dropdown: [
-        { name: "이스텍바이오 제품", path: "/products/estek" },
-        { name: "제닉스바이오 제품", path: "/products/genics" }
-      ]
-    },
-    { 
       name: "제품소개", 
       path: "#",
       dropdown: [
@@ -66,6 +58,14 @@ export default function Navbar() {
       ]
     },
     { name: "뉴진스 랩 컨설팅", path: "/partners/consulting" },
+    { 
+      name: "R&D", 
+      path: "#",
+      dropdown: [
+        { name: "이스텍바이오 제품", path: "/products/estek" },
+        { name: "제닉스바이오 제품", path: "/products/genics" }
+      ]
+    },
     { name: "자료실", path: "/archive" },
     { name: "견적문의", path: "/inquiry" }
   ];
