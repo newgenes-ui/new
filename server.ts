@@ -64,6 +64,48 @@ async function startServer() {
     }
   });
 
+  // API route for demo application
+  app.post("/api/demo", async (req, res) => {
+    const { name, phone, email, message } = req.body;
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: parseInt(process.env.SMTP_PORT || "587"),
+      secure: parseInt(process.env.SMTP_PORT || "587") === 465,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: `"NewGenes Website" <${process.env.SMTP_USER}>`,
+      to: "newgenes@newgenesci.com",
+      subject: `[데모신청] ${name} / ${phone}`,
+      text: `성함/업체명: ${name}\n연락처: ${phone}\n이메일: ${email}\n\n데모 신청 및 문의 내용:\n${message}`,
+    };
+
+    try {
+      if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+        console.warn("SMTP credentials missing. Logging email content instead.");
+        console.log("Email to: newgenes@newgenesci.com");
+        console.log("Subject:", mailOptions.subject);
+        console.log("Body:", mailOptions.text);
+        
+        return res.status(200).json({ 
+          success: true, 
+          message: "SMTP 설정이 필요합니다. (로그 확인됨)" 
+        });
+      }
+
+      await transporter.sendMail(mailOptions);
+      res.status(200).json({ success: true, message: "데모 신청이 성공적으로 전송되었습니다." });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      res.status(500).json({ success: false, message: "이메일 전송 중 오류가 발생했습니다." });
+    }
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
