@@ -26,7 +26,7 @@ export default function NanoEntek() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/demo", {
+      const response = await fetch("/api/inquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,6 +36,7 @@ export default function NanoEntek() {
           phone: formData.phone,
           email: formData.email,
           message: formData.message,
+          type: "demo",
         }),
       });
 

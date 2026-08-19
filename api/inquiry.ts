@@ -6,7 +6,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { name, phone, email, message } = req.body;
+  const { name, phone, email, message, type } = req.body;
+  const isDemo = type === 'demo';
+  const subjectPrefix = isDemo ? '[데모신청]' : '[견적문의]';
+  const bodyPrefix = isDemo ? '데모 신청 및 문의 내용:' : '문의내용:';
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -22,10 +25,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await transporter.sendMail({
       from: `"NewGenes Website" <${process.env.SMTP_USER}>`,
       to: 'newgenes@newgenesci.com',
-      subject: `[견적문의] ${name} / ${phone}`,
-      text: `성함/업체명: ${name}\n연락처: ${phone}\n이메일: ${email}\n\n문의내용:\n${message}`,
+      subject: `${subjectPrefix} ${name} / ${phone}`,
+      text: `성함/업체명: ${name}\n연락처: ${phone}\n이메일: ${email}\n\n${bodyPrefix}\n${message}`,
     });
-    res.status(200).json({ success: true, message: '문의가 성공적으로 전송되었습니다.' });
+    res.status(200).json({ success: true, message: isDemo ? '데모 신청이 성공적으로 전송되었습니다.' : '문의가 성공적으로 전송되었습니다.' });
   } catch (error: any) {
     console.error(error);
     res.status(500).json({ success: false, message: `이메일 전송 중 오류가 발생했습니다: ${error.message || error}` });
