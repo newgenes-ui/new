@@ -94,13 +94,13 @@ export default function NanoEntek() {
             className="w-auto h-10 md:h-12 mb-6 object-contain object-left" 
           />
 
-          <div className="mb-6">
+          <div className="mb-8">
             <button 
               onClick={scrollToDemo}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer text-sm"
+              className="inline-flex items-center justify-center gap-4 px-12 py-6 bg-secondary hover:bg-secondary/90 text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-xl cursor-pointer text-2xl transform hover:scale-105"
             >
               <span>데모 신청하기</span>
-              <Send className="w-4 h-4" />
+              <Send className="w-7 h-7" />
             </button>
           </div>
 
