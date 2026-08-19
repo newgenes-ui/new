@@ -42,9 +42,9 @@ export default function Inquiry() {
       } else {
         alert(data.message || "네이버 메일 로그인에 실패했습니다. 환경설정(IMAP/SMTP)을 확인하거나 앱 비밀번호가 정확한지 다시 한 번 확인해 주세요.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting form:", error);
-      alert("서버 연결에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      alert(`서버 연결에 실패했습니다: ${error.message || error}`);
     } finally {
       setIsLoading(false);
     }

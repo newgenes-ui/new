@@ -52,9 +52,9 @@ export default function NanoEntek() {
       } else {
         alert(data.message || "이메일 발송에 실패했습니다. 관리자에게 문의해 주세요.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting demo form:", error);
-      alert("서버 연결에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      alert(`서버 연결에 실패했습니다: ${error.message || error}`);
     } finally {
       setIsLoading(false);
     }
