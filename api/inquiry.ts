@@ -26,8 +26,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       text: `성함/업체명: ${name}\n연락처: ${phone}\n이메일: ${email}\n\n문의내용:\n${message}`,
     });
     res.status(200).json({ success: true, message: '문의가 성공적으로 전송되었습니다.' });
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
-    res.status(500).json({ success: false, message: '이메일 전송 중 오류가 발생했습니다.' });
+    res.status(500).json({ success: false, message: `이메일 전송 중 오류가 발생했습니다: ${error.message || error}` });
   }
 }

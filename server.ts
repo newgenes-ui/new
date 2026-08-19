@@ -58,9 +58,9 @@ async function startServer() {
 
       await transporter.sendMail(mailOptions);
       res.status(200).json({ success: true, message: "문의가 성공적으로 전송되었습니다." });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error sending email:", error);
-      res.status(500).json({ success: false, message: "이메일 전송 중 오류가 발생했습니다." });
+      res.status(500).json({ success: false, message: `이메일 전송 중 오류가 발생했습니다: ${error.message || error}` });
     }
   });
 
@@ -100,9 +100,9 @@ async function startServer() {
 
       await transporter.sendMail(mailOptions);
       res.status(200).json({ success: true, message: "데모 신청이 성공적으로 전송되었습니다." });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error sending email:", error);
-      res.status(500).json({ success: false, message: "이메일 전송 중 오류가 발생했습니다." });
+      res.status(500).json({ success: false, message: `이메일 전송 중 오류가 발생했습니다: ${error.message || error}` });
     }
   });
 
