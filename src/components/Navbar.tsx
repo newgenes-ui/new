@@ -66,7 +66,14 @@ export default function Navbar() {
         { name: "제닉스바이오 제품", path: "/products/genics" }
       ]
     },
-    { name: "자료실", path: "/archive" },
+    { 
+      name: "자료실", 
+      path: "#",
+      dropdown: [
+        { name: "카탈로그", path: "/archive" },
+        { name: "현장스케치", path: "/archive/sketch" }
+      ]
+    },
     { name: "견적문의", path: "/inquiry" }
   ];
 

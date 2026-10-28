@@ -6,3 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
+현장스케치 사진자료/
+process_images.mjs

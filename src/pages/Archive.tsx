@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Download } from "lucide-react";
 
 export default function Archive() {

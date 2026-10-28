@@ -15,6 +15,7 @@ import GenicsBio from "./pages/GenicsBio";
 import TwistBio from "./pages/TwistBio";
 import ResearchConsulting from "./pages/ResearchConsulting";
 import Archive from "./pages/Archive";
+import FieldSketch from "./pages/FieldSketch";
 import ESG from "./pages/ESG";
 
 export default function App() {
@@ -37,6 +38,8 @@ export default function App() {
             <Route path="/partners/twist" element={<TwistBio />} />
             <Route path="/partners/consulting" element={<ResearchConsulting />} />
             <Route path="/archive" element={<Archive />} />
+            <Route path="/archive/sketch" element={<FieldSketch />} />
+            <Route path="/sketch" element={<FieldSketch />} />
             <Route path="/esg" element={<ESG />} />
             <Route path="/inquiry" element={<Inquiry />} />
           </Routes>
