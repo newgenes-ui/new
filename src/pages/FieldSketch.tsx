@@ -44,18 +44,12 @@ const eventList: EventSketch[] = [
       },
       {
         id: 2,
-        src: "/sketch/dcc_booth_consulting2.jpg",
-        title: "부스 방문 연구원 장비 시연 및 상세 상담",
-        alt: "대전 DCC 부스 상담 현장"
-      },
-      {
-        id: 3,
         src: "/sketch/dcc_booth_demo.jpg",
         title: "모바일·태블릿 실시간 시연 및 이벤트 참여",
         alt: "대전 DCC 부스 이벤트 참여"
       },
       {
-        id: 4,
+        id: 3,
         src: "/sketch/dcc_booth_consulting1.jpg",
         title: "나노엔텍 부스 전경 및 참관객 상담 현장",
         alt: "대전 DCC 부스 방문객 상담"
